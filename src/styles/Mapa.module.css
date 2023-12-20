@@ -1,0 +1,9 @@
+.MapaDev{
+display: flex; 
+left: 0;
+ top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2d2532;
+    color: #2cb54d;
+}
