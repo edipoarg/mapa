@@ -1,0 +1,17 @@
+.LogoMapa{
+position: absolute;
+left: 16vw;
+top: 4vh;
+}
+
+.Logo{
+    height: 10vh;
+}
+
+.LogoTitulo{
+    position: relative;
+    font-size: 25px;
+    top: -30px; /* Ajusta esta propiedad para subir el título 2 píxeles */
+left: 10px;
+    
+}

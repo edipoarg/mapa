@@ -1,0 +1,36 @@
+.Screen{
+display:  grid;
+grid-template-columns: 1fr 1fr;
+width: 100vw;
+margin-left: 10vw;
+padding-top: 30vh;
+}
+
+.ComisariaScreen{
+
+    width: 8vw;
+ padding: 0vh 4vw;
+border: solid 1px;
+z-index: 1000;
+height: 30vh;
+
+
+}
+
+.AutoridadesScreen{
+    padding: 2vh 4vw;    
+    width: 8vw;
+    height: 30vh;
+
+}
+
+@media (min-width: 1000px) {
+    
+    .Screen{
+        display:  grid;
+        grid-template-columns: 1fr;
+        width: 20vw;
+        margin-left: 10vw;
+        }
+  }
+  
