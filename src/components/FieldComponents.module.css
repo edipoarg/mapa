@@ -1,0 +1,124 @@
+@property --fg-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgb(209, 207, 204);
+}
+
+@property --shadow-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgb(57, 61, 64);
+}
+
+@property --bg-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: black;
+}
+
+:root {
+    background-color: #8200b8;
+    font-family: monospace;
+    color: var(--fg-color);
+}
+
+
+h1 {
+    color: rgb(87, 201, 155);
+    font-size: 22px;
+    text-transform: uppercase;
+    }
+
+h2 {
+    color: var(--fg-color);
+    font-size: 22px;
+}
+
+input {
+    height: 100%;
+    padding: 1vw 2vw;
+    border: 5px solid var(--shadow-color);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    box-shadow: rgba(118, 255, 142, 0.35) 5.14px 6.13px 0px 1px;
+    transition: all 0.5s;
+}
+
+input:focus {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 0;
+}
+
+li .field {
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    background-color: var(--fg-color);
+    margin: 0;
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"] {
+    padding: 1vw;
+}
+
+
+input[type="checkbox"]::before, input[type="radio"]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="radio"]::before {
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: 10px solid var(--bg-color);
+    border-radius: 6px;
+}
+
+input[type="checkbox"]::before {
+      width: 0.65em;
+  height: 0.65em;
+    box-shadow: inset 1vh 1vh var(--bg-color);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before, input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+li .field * {
+    order: 3;
+    width: 2vw;
+    height: 100%;
+    flex-grow: 1;
+}
+li .field input {
+    order: 0;
+    flex-grow: 0;
+    width: 6vw;
+}
+li .field label {
+    order: 1;
+    flex-grow: 2;
+    padding: 2vw ;
+    text-transform: none;
+    color: var(--fg-color);
+}
+
+label, legend {
+    text-transform: uppercase;
+    color: var(--fg-color);
+}
