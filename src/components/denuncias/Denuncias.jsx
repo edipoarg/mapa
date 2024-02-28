@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import React from 'react';
-import Navbar from "../Navbar";
+import Navbar from "../navbar/Navbar";
 import styles from './Denuncias.module.css';
 import Temas from '../Temas';
 

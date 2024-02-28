@@ -1,47 +1,38 @@
-import Navbar from "../Navbar";
+import React from 'react';
+import Navbar from '../navbar/Navbar';
+import Icons from '../iconos/Icons';
+import { Link } from 'react-router-dom';
+import styles from './Menu.module.css';
 
+
+const menuItems = [
+  { path: '/caba', icon: 'mapa' },
+  { path: '/denuncia', icon: 'denuncias' },
+  { path: '/recursos', icon: 'recursos' },
+  { path: '/investigaciones', icon: 'investigaciones' },
+  { path: '/reportes', icon: 'reportes' },
+  { path: '/gatillo-facil', icon: 'gatillo' },
+  { path: '/jefatura', icon: 'jefatura' },
+  { path: '/podcast', icon: 'podcast' },
+  { path: '/nosotrxs', icon: 'contacto' },
+];
 
 const Menu = () => {
+  return (
+    <>
+      <section className={styles.menuContainer}>
+        <section className={styles.menu}>
+          {menuItems.map((menuItem, index) => (
+            <Link key={index} to={menuItem.path}>
+              <Icons icon={menuItem.icon} className={styles.icon} iconSize="2.2rem" />
+              <h5 className={styles.iconName}>{menuItem.icon }</h5>
+            </Link>
+          ))}
 
-    return(
-        <>
+        </section>
+      </section>
+    </>
+  );
+};
 
-<section style={menu}>
-    <section>
-    <Link to="/caba" style={botonDenuncias}>
-            mapa
-    </Link>
-    <Link to="/denuncia">
-            denunciá
-    </Link>
-    <Link to="/recursos">
-            reportes
-    </Link>
-    <Link to="/investigaciones">
-            investigaciones
-    </Link>
-    <Link to="/reportes">
-            reportes
-    </Link>
-    <Link to="/podcast">
-            podcast
-    </Link>
-    <Link to="/jefatura">
-            jefatura
-    </Link>
-    <Link to="/contacto">
-            contacto
-    </Link>
-    <Link to="/gatillo-facil">
-            gatillo facil
-    </Link>
-
-    </section>
-
-</section>
-
-        </>
-    );
-}
-
-export default Menu
+export default Menu;

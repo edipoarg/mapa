@@ -1,39 +1,15 @@
-import { Marker } from "react-map-gl/maplibre";
-import React, { useState, useEffect } from "react";
+import Navbar from "../navbar/Navbar";
 
-const GatilloFacil = (Gatillodata, setScreenData, setMarker, selected ) => {
+const GatilloFacil = () => {
+
     return(
-             <Marker
-             key={id}
-             longitude={coords.longitude}
-             latitude={coords.latitude}
-             onMouseEnter={() => setMarker(id)}
-             onMouseLeave={() => setMarker(null)}
-             onClick={() =>
-                setPopupData({
-                    coords: {
-                    lat: coords.latitude,
-                    lng: coords.longitude,
-                },
-                fecha,
-                victima,
-                edad,
-                direccion,
-                barrio,
-                fuerza,
-                policias,
-                caso,
-                url,                
-                })
+        <>
+                <Navbar/>
 
-             }
+                <h4>Gatillo Fácil</h4>
 
-             
-             >
-
-
-             </Marker>
-    )
+        </>
+    );
 }
 
-export default GatilloFacil;
+export default GatilloFacil
