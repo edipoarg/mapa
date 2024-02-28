@@ -1,15 +1,15 @@
 import Navbar from "../navbar/Navbar";
 
-const Reportes = () => {
+const Recursos = () => {
 
     return(
         <>
                 <Navbar/>
 
-                <h4>Reportes</h4>
+                <h4>Recursos</h4>
 
         </>
     );
 }
 
-export default Reportes
+export default Recursos

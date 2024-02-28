@@ -13,24 +13,15 @@ import Caba from "./components/Caba";
 import Investigaciones from "./components/Investigaciones/Investigaciones.jsx";
 import Denuncia from "./components/denuncia/Denuncia.jsx";
 import Denuncias from "./components/denuncias/Denuncias.jsx";
-import Herramientas from "./components/recursos/Herramientas.jsx";
+import Recursos from "./components/recursos/Recursos.jsx";
 import Jefatura from "./components/jefatura/Jefatura.jsx";
 import Reportes from "./components/reportes/Reportes.jsx";
 import Nosotrxs from "./components/us/Nosotrxs.jsx";
-
-
-
-
-
-
-
-
-
+import Menu from "./components/menu/Menu.jsx";
+import GatilloFacil from "./components/gatilloFacil/GatilloFacil.jsx";
+import Podcast from "./components/podcast/Podcast.jsx";
 
 import Root from "./routes/Root.jsx";
-
-
-
 
 const loader = async () => ({
   urls: await getURLs({
@@ -41,7 +32,6 @@ const loader = async () => ({
 })
 
 
-
 const router = createHashRouter([
   {
     path: "/",
@@ -50,13 +40,17 @@ const router = createHashRouter([
       { path:"/", element:<App/>, loader},
       { path:"/caba", element:< Caba/> },
       { path:"/laplata", element:< Caba/> },
-
       { path:"/denuncias", element:< Denuncias/> },
-      { path:"/herramientas", element:< Herramientas/> },
+      { path:"/Recursos", element:< Recursos/> },
       { path:"/investigaciones", element:< Investigaciones/> },
       { path:"/jefatura", element:< Jefatura/> },
       { path:"/reportes", element:< Reportes/> },
       { path:"/nosotrxs", element:< Nosotrxs/> },
+      { path:"/menu", element:< Menu/> },
+      { path:"/podcast", element:< Podcast/> },
+      { path:"/gatillo-facil", element:< GatilloFacil/> },
+
+
 
     ]
   },

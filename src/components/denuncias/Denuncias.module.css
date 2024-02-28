@@ -111,3 +111,30 @@ body{
     padding-left: 2vw;
     font-size: 18px;
 }
+
+
+/*  PC SCREEN */
+@media (min-width: 1080px) {
+
+    body{
+   
+    }
+
+    .denuncias {
+
+        display: flex; /* Utiliza flexbox para centrar los elementos */
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos verticalmente */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        grid-template-columns: 1fr 1fr;
+        width: 90vw;
+        max-width: 90vw;
+        height: 80vh;
+        max-height: 80vh;
+        margin: auto;
+        padding: 2vh 1vw;
+        gap: 2vh 0vw;
+    
+    }
+    
+}
