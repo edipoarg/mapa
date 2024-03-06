@@ -1,19 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import React from 'react';
-import Navbar from "../navbar/Navbar";
 import styles from './Denuncias.module.css';
 import Temas from '../Temas';
+import Caba from '../Caba';
 
 const Denuncias = () => {
     return (
         <>
-            <Navbar />
             <section className={styles.denuncias}>
 
                 <section style={Temas.denunciasTema} className={styles.hacerDenunciasContainer} >
                 <Link to="/denuncia">
-                    <h2 className={styles.title1}>Denunciá</h2>
+                    <h2 className={styles.title1}>QUIERO  <br />DENUNCIAR</h2>
                     <h4 className={styles.subTitle}>Un hecho de violencia policial <br /> como víctima o testigo</h4>
                     </Link>
                 </section>

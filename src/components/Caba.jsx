@@ -29,14 +29,14 @@ const Caba = () => {
   // PROPERTIES OF THE MAP
   const mapProps = {
     initialViewState: {
-      longitude: -58.4171,
-      latitude: -34.6076,
+      longitude: -57.954444,
+      latitude: -35.05,
       zoom: 1.5,
       minZoom: 1,
       maxZoom: 18,
       maxBounds: [
-        [-58.65981, -34.71960], // Lower-left limit of CABA
-        [-58.28348, -34.50316], // Upper-right limit of CABA
+        [-58.41105, -35.28147], // Lower-left limit
+        [-57.52902, -34.69485], // Upper-right limit
       ],
     },
     style: {
@@ -78,7 +78,6 @@ const Caba = () => {
   return (
     <>
       <section id="MapaDev" className={styles.MapaDev}>
-        <h2>CABA</h2>
         <Screen />
         <MapGL id="mapa" mapLib={maplibregl} {...mapProps}>
           {violenciasData && (
