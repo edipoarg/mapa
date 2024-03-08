@@ -1,35 +1,15 @@
 import { Jurisdiccion } from "./Jurisdiccion";
-import { Efectivo } from "./Efectivo";
-import { AutoridadSuperior, tipoAutoridadSuperior } from "./AutoridadSuperior";
-import { Areas } from "./TiposDependencia";
-import { DepartamentosComisarias } from "./jerarquias/DepartamentosComisarias";
-import { Direcciones } from "./jerarquias/Direcciones";
-import { Divisiones } from "./jerarquias/Divisiones";
-import { Jefaturas } from "./jerarquias/Jefaturas";
-import { Superintendencias } from "./jerarquias/Superintendencias";
+import { Area, Divisiones, DepartamentosComisarias, Direcciones, Superintendencias, Jefaturas } from "./TiposDependencia";
 
-export enum AutoridadDependenciaElegida {
-    area = 'Areas',
-    departamentosComisarias = 'DepartamentosComisarias',
-    direcciones = 'Direcciones',
-    divisiones = 'Divisiones',
-    jefaturas = 'Jefaturas',
-    superintendencias = 'Superintendencias',
-  }
-  
-  export interface DependenciaElegida {
-    nivel: NivelDependencia;
-    autoridad_superior:
-  }
-  
-  export interface Dependencia {
+
+   
+  export interface Dependencias {
     id: string;
-    nivel: NivelDependencia;
-    nombre: TiposDependencia['nivel'];
-    autoridad_superior: DependenciaElegida['TiposDependencia'];
+    nivel: 'Area' | 'Division' | 'Departamento' | 'Direccion' | 'Superintendencia' | 'Jefatura';
+    nombre: Area['nombre'] | DepartamentosComisarias['nombre'] | Direcciones['nombre'] | Jefaturas['nombre'] | Superintendencias['nombre'] | Divisiones['nombre'] ;
     jurisdiccion: Jurisdiccion;
-    contacto: string;
+    contacto?: string;
     nombre_anterior?: string;
-    descripcion: string;
+    descripcion?: string;
     geo_posicion: string;
   }

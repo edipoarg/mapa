@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 import styles from './Denuncias.module.css';
 import Temas from '../Temas';
-import Caba from '../Caba';
 
 const Denuncias = () => {
     return (

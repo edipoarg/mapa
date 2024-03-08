@@ -1,7 +1,5 @@
-import {Cargos} from './Cargos.js';
-import {Grados} from './Grados.js';
+import {Grados, Cargos} from './Cargos.js';
 import {Dependencias} from './Dependencias.js'
-
 
 export interface Efectivo {
     id: string;

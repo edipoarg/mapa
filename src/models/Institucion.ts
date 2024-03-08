@@ -2,10 +2,10 @@ import {Persona} from './Persona';
 
 export interface Institucion {
     id: string;
-    tipo: ;
+    tipo: string;
     nombre: string;
-    descripcion: string;
-    responsable: Persona;
-    autoridad_superior: string;
-    subordinados: string;
+    descripcio?: string;
+    responsable?: Persona;
+    autoridad_superior?: string;
+    subordinados?: string;
 }
