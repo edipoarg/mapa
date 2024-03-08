@@ -9,7 +9,7 @@ import {
 import "./index.css";
 import App from "./App";
 
-import Caba from "./components/Caba";
+import Mapa from "./components/Mapa.jsx";
 import Investigaciones from "./components/Investigaciones/Investigaciones.jsx";
 import Denuncia from "./components/denuncia/Denuncia.jsx";
 import Denuncias from "./components/denuncias/Denuncias.jsx";
@@ -26,6 +26,7 @@ import Root from "./routes/Root.jsx";
 
 const loader = async () => ({
   urls: await getURLs({
+    casos: "data/casos.json",
     barriosCaba: "data/barriosCaba.json",
     departamentos: "data/departamentos.json",
     caba: "data/caba.json",
