@@ -11,7 +11,7 @@
     "config": "tsx ./src/schemas/m2cms.ts ./public/config.yml ./src/schemas/models"
   },
   "dependencies": {
-    "@edipoarg/components": "github:edipoarg/components#dev",
+    "@edipoarg/components": "git+https://github.com/edipoarg/components#dev",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
