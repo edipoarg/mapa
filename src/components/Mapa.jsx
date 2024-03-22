@@ -14,11 +14,11 @@ import Screen from "./Screen";
 import styles from "../styles/Mapa.module.css";
 
 // GEOJSON IMPORTS
-import { departamentos, caba, barriosCaba } from "../data/index";
 
 // MARKERS IMPORTS
 import {cases} from "../data/casos.json";
 import defaultLayers from "../data/layers.json";
+import defaultViewState from "../data/view.json";
 
 // Popup IMPORTS
 import Popup from "./Popup";
@@ -28,21 +28,11 @@ import Filtros from "./filtros/Filtros"; // Cambia la ruta a tu formulario
 
 
 const Mapa = () => {
-
+  const urls = useLoaderData();
 
   // PROPERTIES OF THE MAP
-  const mapProps = {
-    initialViewState: {
-      longitude: -57.954444,
-      latitude: -35.05,
-      zoom: 1.5,
-      minZoom: 1,
-      maxZoom: 18,
-      maxBounds: [
-        [-58.41105, -35.28147], // Lower-left limit
-        [-57.52902, -34.69485], // Upper-right limit
-      ],
-    },
+  const defaultMapProps = {
+    initialViewState: defaultViewState,
     style: {
       width: "100vw",
       height: "90vh",
@@ -86,16 +76,17 @@ const Mapa = () => {
 
   // SCREEN INFO
   const [popupInfo, setPopupInfo] = useState(null);
-
   const [layers, setLayers] = useState(defaultLayers);
+  const [mapProps, setMapProps] = useState(defaultMapProps);
 
   const updateLayers = () => {
-    layers[0].data = departamentos;
-    layers[1].data = barriosCaba;
-    layers[2].data = caba;
+    layers[0].data = urls.departamentos;
+    layers[1].data = urls.admin1;
+    layers[2].data = urls.admin2;
   };
   useEffect(updateLayers , [layers]);
   updateLayers();
+  console.error(layers)
 
   // HOVER
   const handleHover = (event) => {

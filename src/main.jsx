@@ -27,9 +27,9 @@ import TodasInvestigaciones from "./components/Investigaciones/todasInvest/Todas
 
 const loader = async () => ({
   urls: await getURLs({
-    barriosCaba: "data/barriosCaba.json",
     departamentos: "data/departamentos.json",
-    caba: "data/caba.json",
+    admin1: "data/admin1.json",
+    admin2: "data/admin2.json",
   }),
 })
 
