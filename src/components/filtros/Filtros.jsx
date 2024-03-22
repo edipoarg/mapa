@@ -1,7 +1,6 @@
 import styles from "./Filtros.module.css";
 import PropTypes from "prop-types";
 import Icons from "../iconos/Icons";
-import MuiSwitch from "../MuiSwitch";
 
 
 
@@ -37,12 +36,7 @@ export default function Filtros({
                     Comisarias{" "}
                   </h4>
                 </div>
-                <MuiSwitch sx={{ m: 1 }} className={styles.switch}
-                  defaultChecked={tipoFilters.Dependencias}
-                  onChange={handleTipoFilterChange("Dependencias")}
-                ></MuiSwitch>
-                 
-   
+
               </div>
 
               <div className={styles.tipos}>
@@ -56,10 +50,6 @@ export default function Filtros({
                   </h4>
                 </div>
 
-                <MuiSwitch sx={{ m: 1 }} className={styles.switch}
-                  defaultChecked={tipoFilters.Casos}
-                  onChange={handleTipoFilterChange("Casos")}
-                ></MuiSwitch>
               </div>
 
               <div className={styles.tipos}>
@@ -73,10 +63,7 @@ export default function Filtros({
                     Gatillo Fácil
                   </h4>
                 </div>
-                <MuiSwitch sx={{ m: 1 }} className={styles.switch}
-                  defaultChecked={tipoFilters.GatilloFacil}
-                  onChange={handleTipoFilterChange("GatilloFacil")}
-                ></MuiSwitch>
+
               </div>
             </div>
           </div>

@@ -1,0 +1,26 @@
+[{
+    "id":"departamentos-layer",
+    "type":"fill",
+    "paint": {
+          "fill-color": "#2d2532",
+          "fill-opacity": 1,
+          "fill-outline-color": "#9423ed"
+        }
+  }, {
+    "id": "barrios-layer",
+    "type": "fill",
+    "paint": {
+          "fill-color": "#2d2532",
+          "fill-opacity": 1,
+          "fill-outline-color": "#2cb34c"
+        }
+  },{
+    "id": "caba-layer",
+    "type": "fill",
+    "paint": {
+          "fill-color": "rgba(255, 255, 255, 0)",
+          "fill-opacity": 1,
+          "fill-outline-color": "#9423ed"
+        }
+  }
+]

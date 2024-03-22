@@ -1,9 +1,7 @@
 // PROGRAM IMPORTS
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import MapGL, { NavigationControl } from "react-map-gl/maplibre";
-import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
+import {Map} from "@edipoarg/components"
 
 // STYLES IMPORTS
 import mystyle from "./mystyle.json";
@@ -17,10 +15,10 @@ import styles from "../styles/Mapa.module.css";
 
 // GEOJSON IMPORTS
 import { departamentos, caba, barriosCaba } from "../data/index";
-import { DepsSource, CabaSource, BarriosCabaSource } from "./Sources";
 
 // MARKERS IMPORTS
-import  {Markers}  from "./Markers";
+import {cases} from "../data/casos.json";
+import defaultLayers from "../data/layers.json";
 
 // Popup IMPORTS
 import Popup from "./Popup";
@@ -30,11 +28,7 @@ import Filtros from "./filtros/Filtros"; // Cambia la ruta a tu formulario
 
 
 const Mapa = () => {
-  const { urls } = useLoaderData();
-  const cases = urls.casos.cases.map((c) => ({ ...c, date: new Date(c.date) }));
 
-
-  
 
   // PROPERTIES OF THE MAP
   const mapProps = {
@@ -93,6 +87,16 @@ const Mapa = () => {
   // SCREEN INFO
   const [popupInfo, setPopupInfo] = useState(null);
 
+  const [layers, setLayers] = useState(defaultLayers);
+
+  const updateLayers = () => {
+    layers[0].data = departamentos;
+    layers[1].data = barriosCaba;
+    layers[2].data = caba;
+  };
+  useEffect(updateLayers , [layers]);
+  updateLayers();
+
   // HOVER
   const handleHover = (event) => {
     setSelectedFeatureId(event.features?.[0]?.id || null);
@@ -148,25 +152,7 @@ const Mapa = () => {
         </a>
       </div>
         <Screen />
-        <MapGL id="mapa" mapLib={maplibregl} {...mapProps}
-         onHover={handleHover} 
-         onLeave={handleLeave} >
-
-           {!!(filteredData && filteredData.length) && (
-          <Markers
-            data={filteredData}
-            setPopupInfo={setPopupInfo}
-            setMarker={setSelectedMarkerId}
-            selected={selectedMarkerId}
-            tipoFilters={tipoFilters}
-            handleTipoFilter={handleTipoFilter}
-          />
-        )}
-          <NavigationControl position="top-right" />
-          <DepsSource data={departamentos} />
-          <BarriosCabaSource data={barriosCaba} />
-          <CabaSource data={caba} />
-        </MapGL>
+        <Map mapConfig={mapProps} sources={layers} pointsOfInterest={cases}/>
         <LogoMapa />
       </section>
       {popupInfo && <Popup {...popupInfo} />}
