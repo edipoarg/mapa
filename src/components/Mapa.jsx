@@ -28,7 +28,7 @@ import Filtros from "./filtros/Filtros"; // Cambia la ruta a tu formulario
 
 
 const Mapa = () => {
-  const urls = useLoaderData();
+  const {urls} = useLoaderData();
 
   // PROPERTIES OF THE MAP
   const defaultMapProps = {
@@ -86,7 +86,6 @@ const Mapa = () => {
   };
   useEffect(updateLayers , [layers]);
   updateLayers();
-  console.error(layers)
 
   // HOVER
   const handleHover = (event) => {
