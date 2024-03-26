@@ -20,6 +20,8 @@ import {cases} from "../data/casos.json";
 import defaultLayers from "../data/layers.json";
 import defaultViewState from "../data/view.json";
 
+import Icons from "./iconos/Icons";
+
 // Popup IMPORTS
 import Popup from "./Popup";
 
@@ -142,7 +144,10 @@ const Mapa = () => {
         </a>
       </div>
         <Screen />
-        <Map mapConfig={mapProps} sources={layers} pointsOfInterest={cases}/>
+        <Map mapConfig={mapProps} sources={layers} pointsOfInterest={
+          cases.map(c => ({...c, icon: <Icons icon="casosViolencia" />})
+          )}
+        />
         <LogoMapa />
       </section>
       {popupInfo && <Popup {...popupInfo} />}

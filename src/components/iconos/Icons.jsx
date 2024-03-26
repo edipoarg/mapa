@@ -47,7 +47,7 @@ const iconComponents = {
 
 };
 
-const Icons = ({ icon, className, iconSize }) => {
+const Icons = ({ icon, className = "", iconSize = "2rem" }) => {
   const iconComponent = iconComponents[icon] || null;
 
   return <div className={className} style={{ fontSize: iconSize }}>{iconComponent}</div>;
