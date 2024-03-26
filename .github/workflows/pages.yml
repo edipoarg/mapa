@@ -48,7 +48,7 @@ jobs:
         env:
           VITE_TSV_ID: ${{ secrets.VITE_TSV_ID}}
         run: |
-         yarn run build
+             VITE_BASE_URL=${{steps.deployment.outputs.page_url}} yarn run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
