@@ -27,7 +27,6 @@ import TodasInvestigaciones from "./components/Investigaciones/todasInvest/Todas
 import Ficha from "./components/fichas/Ficha.jsx";
 
 
-
 const loader = async () => ({
   urls: await getURLs({
     casos: "data/casos.json",

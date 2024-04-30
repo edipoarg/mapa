@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Filtros.module.css';
 import PropTypes from 'prop-types';
 import Icons from '../iconos/Icons';
