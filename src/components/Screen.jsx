@@ -1,41 +1,36 @@
-import { BotonTelefono, BotonMas } from "./Botones";
 import styles from "../styles/Screen.module.css";
+import {Link} from "react-router-dom";
 
-  // Define la información específica de cada región según sea necesario
-  const regionInfo = {
+// Función para recortar texto si supera el límite de caracteres
+const truncateText = (text, maxLength) => {
+  // Asegúrate de que el texto no sea null ni undefined
+  const safeText = text ?? ''; // Usa una cadena vacía si text es null o undefined
+  if (safeText.length > maxLength) {
+    return safeText.substring(0, maxLength) + '...';
+  }
+  return safeText;
+};
 
-      Comisaria: "Comisaría CABA",
-      ExComisaria: "Ex Nombre CABA",
-      Direccion: "Dirección CABA",
-      Comisario: "Comisario CABA",
-      Cargo: "Cargo autoridad CABA",
-    }  
-  
-
-  const regionData = regionInfo || {};
-
-const Screen = () => { 
-
+const Screen = ({ title, level, adress, phone, age, circs, caseId }) => {
   return (
-    <>
     <section className={styles.Screen}>
-      <section className={styles.ComisariaScreen} id="ComisariaScreen">
-        <section className={styles.ComisariaData} id="ComisariaData">
-          <h4>{regionData.ExComisaria}</h4>
-          <h2>{regionData.Comisaria}</h2>
-          <h5>{regionData.Direccion}</h5>
+      <section className={styles.ComisariaScreen}>
+        <section className={styles.ComisariaData}>
+          <h3 className={styles.level}>{level}</h3>
+          <h2 className={styles.title}>{title}</h2>
+          <h4 className={styles.adress}>{adress}</h4>
+          <h4 className={styles.phone}>{phone}</h4>
+          <h4 className={styles.age}>{age}</h4>
+          <h4 className={styles.circs}>{truncateText(circs, 120)}</h4>
+
+          <Link to={`/ficha/${caseId}`}>
+          <h3 className={styles.moreButton}>Ver +</h3>
+          </Link>
+
         </section>
-        <BotonTelefono />
       </section>
-      <section className={styles.AutoridadesScreen} id="AutoridadesScreen">
-        <section className="AutoridadesData" id="AutoridadesData">
-          <h4>{regionData.Cargo}</h4>
-          <h3>{regionData.Comisario}</h3>
-        </section>
-        <BotonMas />
-      </section>
-      </section>
-    </>
+    </section>
   );
 };
+
 export default Screen;

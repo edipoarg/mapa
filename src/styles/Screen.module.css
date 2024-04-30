@@ -14,12 +14,60 @@ margin-left: 10vw;
 
 .ComisariaScreen{
  padding: 0vh 4vw;
-border: solid 1px;
-z-index: 1000;
-backdrop-filter: blur(11.2px);
--webkit-backdrop-filter: blur(11.2px);
+ border: solid 1px;
+ z-index: 1000;
+ backdrop-filter: blur(11.2px);
+ -webkit-backdrop-filter: blur(11.2px);
+}
 
+.title{
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: 'Ronnia Bold Condensed'
+}
 
+.level{
+    margin:0;
+    padding-top: 1vh;
+    font-size: 1rem;
+}
+
+.adress{
+    padding-top: 1vh;
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: 'Ronnia Thin Condensed';
+}
+
+.phone{
+    margin: 0;
+    padding-bottom: 1vh;
+    font-size: 0.9rem;
+    font-family: 'Ronnia Thin Condensed';
+
+}
+
+.age{
+    margin: 0;
+    font-family: 'Ronnia Thin Condensed';
+
+}
+.circs{
+    margin: 0;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    font-family: 'Ronnia Thin Condensed';
+}
+
+.moreButton{
+    margin: 0;
+    border: solid 1px #2cb54d;
+    text-align: center;
+    width: 10vw;
+}
+.moreButton:hover{
+    color: #232128;
+    background-color: #2cb54d;
 }
 
 .AutoridadesScreen{
@@ -38,14 +86,20 @@ backdrop-filter: blur(11.2px);
         display:  grid;
         grid-template-columns: 1fr;
         width: 20vw;
-        margin-left: 10vw;
-        
+        max-width: 20vw;
+        margin-left: 11vw;
         }
 
-
+        .moreButton{
+            width: 5vw;
+        }
         .ComisariaScreen{
-            margin-top: 30vh;
+            width: 12vw;
+            margin-top: 35vh;
+            max-width: 12vw;
+            padding: 0vh 1vw;
 
         }
+
   }
   

@@ -24,6 +24,8 @@ import Autorxs from "./components/Investigaciones/autorxs/Autorxs.jsx";
 import Investigacion from "./components/Investigaciones/investigacion/Investigacion.jsx";
 import Root from "./routes/Root.jsx";
 import TodasInvestigaciones from "./components/Investigaciones/todasInvest/TodasInvestigaciones.jsx";
+import Ficha from "./components/fichas/Ficha.jsx";
+
 
 const loader = async () => ({
   urls: await getURLs({
@@ -31,6 +33,12 @@ const loader = async () => ({
     barriosCaba: "data/barriosCaba.json",
     departamentos: "data/departamentos.json",
     caba: "data/caba.json",
+    laPlata: "data/laPlata.json",
+    departamentosLaPlata: "data/departamentosLaPlata.json",
+    dependenciasLaPlata: "../data/dependenciasLaPlata.json",
+    dependenciasCaba: "../data/dependenciasCaba.json",
+    gatillo: "../data/gatilloLaPlata.json"
+
   }),
 })
 
@@ -41,11 +49,11 @@ const router = createHashRouter([
     element: <Root/>,
     children:[
       { path:"/", element:<App/>, loader},
-      { path:"/denuncias", element:< Denuncias/> },
-      { path:"/recursos", element:< Recursos/> },
+      { path:"/denuncias", element:< Denuncias/>, loader },
+      { path:"/recursos", element:< Recursos/>, loader },
       { path:"/investigaciones", element:< Investigaciones/> },
       { path:"/jefatura", element:< Jefatura/> },
-      { path:"/reportes", element:< Reportes/> },
+      { path:"/reportes", element:< Reportes/>},
       { path:"/nosotrxs", element:< Nosotrxs/> },
       { path:"/menu", element:< Menu/> },
       { path:"/podcast", element:< Podcast/> },
@@ -55,7 +63,8 @@ const router = createHashRouter([
       { path: "/autorxs", element: <Autorxs/>},
       { path: "/investigacion/:dominio", element: <Investigacion/>},
       { path: '/investigaciones/lista', element: <TodasInvestigaciones /> },
-      
+      { path: "/ficha/:Contador", element: <Ficha /> 
+    }
     ]
   },
 ]);
