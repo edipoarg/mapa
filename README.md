@@ -1,3 +1,5 @@
+# Este repo está deprecado, no vamos a ir por esta solución.
+
 # Mapa de la Policia
 ## red de cuidado ciudadano
 
