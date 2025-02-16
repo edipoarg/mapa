@@ -1,0 +1,92 @@
+
+.indexContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+
+}
+
+.reportData{
+    height: 40vh;
+    padding: 5vh 10vw;
+    
+}
+
+.reportMenu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1vh 2vw;
+    margin: auto;
+    height: 40vh;
+    gap: 1vw;
+}
+
+.subMenu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5vh;
+    width: 50vw;
+
+}
+
+.reportItem{
+    background-color: #b9ff39;
+    border-radius: 14px;
+    padding-left: 3vw;
+    height: 30vh;
+}
+
+.Button{
+    background-color: #b9ff39;
+    width: 20vw;
+    padding: 1vh 2vw;
+    border-radius: 14px;
+    text-align: center;
+    }
+.reportItem:hover, .metodologiaButton:hover{
+    background-color: #131313;
+    color: #b9ff39;
+ 
+}
+
+.reportImage{
+    height: 40vh;
+    border: solid 1px;
+    border-radius: 14px;
+    margin: 5vh 3vw;
+}
+
+@media (min-width: 768px) {
+
+    .indexContainer{
+        width: 80vw;
+        margin-left: 8vw;
+        height: 100vh;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+    .subMenu{
+        height: 10vh;
+        width: 15vw;
+    }
+
+    .reportData{
+        height: 40vh;
+        padding: 5vh 5vw;
+        
+    }
+
+    .reportItem{
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+    
+    .Button{
+        background-color: #b9ff39;
+        width: 5vw;
+        padding: 1vh 1vw;
+        border-radius: 14px;
+    }
+}
